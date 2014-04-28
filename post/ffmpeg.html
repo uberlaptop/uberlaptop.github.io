@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="google-site-verification" content="BhkuoEbjr6cHVhJUyDzCYQnGtrAMQWTvQG8UB3NHQBg" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/print.css" media="print" />
+
+    <title>UberLaptop</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <center>
+        <a href="./" style="text-decoration: none;"><h1>UberLaptop</h1></a>
+        </center>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <center>
+        &nbsp;
+		<a href="./about.html">About</a>
+		&nbsp;
+		<a href="./contact.html">Contact</a>
+        </center>
+	<br/>
+	
+<p><center><b>Convert any audio or video file from one format to another using FFmpeg</b></center></p>
+
+<p>I’ll start with a small introduction, for people working with audio and video files on opensource platform, FFmpeg is a command line swiss army knife. It’s a multi-purpose utility tool, but most of the time I use it to convert files from one format to another. One more thing, the ‘FF’ stands for Fast Forward.</p>
+
+<p><b>Starting with installation:</b></p>
+
+<p>Make sure you have the root access, download the latest version of ffmpeg, currently the latest version of ffmpeg at the time of writing this article is 2.2.</p>
+
+<p>$ cd /tmp</p>
+
+<p>$ wget -c http://ffmpeg.org/releases/ffmpeg-2.2.tar.gz</p>
+
+<p>Once the download is done, extract the files and get inside the ffmpeg directory.</p>
+
+<p>$ tar -xvzf ffmpeg-2.2.tar.gz</p>
+
+<p>$ cd ffmpeg-2.2</p>
+
+<p>Now we start with the installation. Execute the below mentioned commands one after another.</p>
+
+<p>First we’ll install some necessary packages required by ffmpeg.</p>
+
+<p>$ sudo apt-get update</p>
+
+<p>$ sudo apt-get install yasm libmp3lame0 libmp3lame-dev libavcodec-extra-53 libx264-dev x264 </p>
+
+<p>Then configure and build ffmpeg.</p>
+
+<p>$ sudo ./configure —enable-libmp3lame ; sudo make ; sudo make install</p>
+
+<p>This will take some time, so have patience.</p>
+
+<p>Once the installation is complete, one final step need to be taken, we’ll need to create a symlink.</p>
+
+<p>$ sudo ln -sf /usr/local/bin/ffmpeg /usr/bin/ffmpeg</p>
+
+<p>And we are done with the installation.</p>
+
+<p><b>Converting File Formats:</b></p>
+
+<p>To convert a flash video file .flv to a .mp4 format:</p>
+
+<p>$ ffmpeg -i samplevideo.flv -strict -2 -qscale 3 samplevideo.mp4</p>
+
+<p>If you only need a sound file, you may want to convert a mp4 file to mp3.</p>
+
+<p>$ ffmpeg -i samplevideo.mp4 sampleaudio.mp3</p>
+
+<p>Or</p>
+
+<p>$ ffmpeg -i samplevideo.mp4 -b:a 192K -vn sampleaudio.mp3</p>
+
+<p>To convert .avi file to .mp4 format:</p>
+
+<p>$ ffmpeg -i samplevideo.avi -acodec libfaac -b:a 128k -vcodec mpeg4 -b:v 1200k -flags +aic+mv4 samplevideo.mp4</p>
+
+<p>To convert .mp4 to .mpg</p>
+
+<p>$ ffmpeg -i samplevideo.mp4 samplevideo.mpg</p>
+
+<p>To convert a group of images into a video sequence:</p>
+
+<p>$ ffmpeg -f image2 -i image%d.jpg testvideo.mpg</p>
+
+<p>To generate multiple images out of a video:</p>
+
+<p>$ ffmpeg -i samplevideo.mpg image%d.jpg</p>
+
+<p>You may require this, to decide on a thumbnail for your video.</p>
+
+<p>That’s mostly all I use ffmpeg for.</p>
+
+<p>If you are not much of a command line person, then you may want to try WinFF, its very simple and easy to use and works equally well.</p>
+
+<br/><br/>
+	
+	<div id="footer">
+	<center>
+	<p>
+	 © UberLaptop Group
+	</p>
+	</center>
+	</div>
+      </section>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-47032280-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+
+  </body>
+</html>
