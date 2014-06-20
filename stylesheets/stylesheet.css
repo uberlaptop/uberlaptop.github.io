@@ -15,8 +15,8 @@ body {
   padding: 0;
   /* background: #151515 url("./images/bkg.png") 0 0; */
   background-image: url("http://uberlaptop.com/images/landscape.jpg");
-  background-repeat: no-repeat;
   background-size:100% auto;
+  background-repeat: no-repeat;
   color: #eaeaea;
   font: 16px;
   line-height: 1.5;
