@@ -14,7 +14,7 @@ body {
   margin: 0;
   padding: 0;
   /* background: #151515 url("./images/bkg.png") 0 0; */
-  background-image: url("/home/suhail/uberlaptop/uberlaptop.github.io/images/landscape.jpg");
+  background-image: url("http://uberlaptop.com/images/landscape.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   color: #eaeaea;
