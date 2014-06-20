@@ -10,13 +10,26 @@
     #secondary { width:100%; margin:0; border:none; }
 }
 
+@media only screen and (min-width: 48em) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 1707px;
+    background-image: url('http://uberlaptop.com/images/landscape.jpg');
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+
+
 body {
   margin: 0;
   padding: 0;
   /* background: #151515 url("./images/bkg.png") 0 0; */
   background-image: url("http://uberlaptop.com/images/landscape.jpg");
   background-repeat: no-repeat;
-  background-size: 100% auto; 
+  background-size: cover; 
   color: #eaeaea;
   font: 16px;
   line-height: 1.5; 
