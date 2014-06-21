@@ -14,10 +14,10 @@
 body {
   margin: 0;
   padding: 0;
-  /* background-image: url("http://uberlaptop.com/images/landscape.jpg") */;
+  background-image: url("http://uberlaptop.com/images/landscape.jpg");
   background-repeat: no-repeat;
   background-size: cover; 
-  color: #8b8b8b;
+  color: #ffffff;
   font: 16px;
   line-height: 1.5; 
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
